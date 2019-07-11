@@ -144,6 +144,6 @@ export class ModelDerivativeClient extends ForgeClient {
      * @throws Error when the request fails, for example, due to insufficient rights.
      */
     async getViewableProperties(urn: string, guid: string): Promise<IDerivativeProps> {
-        return this.get(this.region === Region.EMEA ? `/regions/eu/designdata/${urn}/metadata/${guid}/properties` : `/designdata/${urn}/metadata/${guid}/properties`, {}, ReadTokenScopes, true);
+        return this.get(this.region === Region.EMEA ? `/regions/eu/designdata/${urn}/metadata/${guid}/properties?forceget=true` : `/designdata/${urn}/metadata/${guid}/properties?forceget=true`, {}, ReadTokenScopes, true);
     }
 }
