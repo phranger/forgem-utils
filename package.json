@@ -1,5 +1,5 @@
 {
-  "name": "forge-nodejs-utils",
+  "name": "forgem-utils",
   "version": "3.0.3",
   "description": "Tools for accessing Autodesk Forge APIs from Node.js apps.",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petrbroz/forge-nodejs-utils.git"
+    "url": "git+https://github.com/phranger/forgem-utils.git"
   },
   "keywords": [
     "autodesk",
@@ -22,9 +22,9 @@
   "author": "Petr Broz <petr.broz@autodesk.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/petrbroz/forge-nodejs-utils/issues"
+    "url": "https://github.com/phranger/forgem-utils/issues"
   },
-  "homepage": "https://github.com/petrbroz/forge-nodejs-utils#readme",
+  "homepage": "https://github.com/phranger/forgem-utils#readme",
   "devDependencies": {
     "jsdoc": "^3.6.2",
     "mocha": "^5.2.0",
