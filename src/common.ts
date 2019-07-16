@@ -138,6 +138,7 @@ export abstract class ForgeClient {
         var resp = await this.fetch(endpoint, options);
         while (resp.status === 202 && repeatOn202) {
             resp = new Response();
+            console.log('retrying...');
             sleep(RetryDelay);
             resp = await this.fetch(endpoint, options);
         }
