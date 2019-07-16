@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const querystring = __importStar(require("querystring"));
 const node_fetch_1 = __importStar(require("node-fetch"));
 const authentication_1 = require("./authentication");
-const RetryDelay = 5000; // Delay (in milliseconds) before retrying after a "202 Accepted" response
+const RetryDelay = 10000; // Delay (in milliseconds) before retrying after a "202 Accepted" response
 function sleep(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
 exports.DefaultHost = 'https://developer.api.autodesk.com';
 var Region;

@@ -3,7 +3,7 @@ import fetch, { RequestInit, Response } from 'node-fetch';
 
 import { AuthenticationClient } from './authentication';
 
-const RetryDelay = 5000; // Delay (in milliseconds) before retrying after a "202 Accepted" response
+const RetryDelay = 10000; // Delay (in milliseconds) before retrying after a "202 Accepted" response
 function sleep(ms: number) { return new Promise(function(resolve) { setTimeout(resolve, ms); }); }
 
 export const DefaultHost = 'https://developer.api.autodesk.com';
