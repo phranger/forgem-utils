@@ -135,7 +135,7 @@ export abstract class ForgeClient {
     protected async get(endpoint: string, headers: { [name: string]: string } = {}, scopes: string[], repeatOn202: boolean = false) {
         const options: RequestInit = { method: 'GET', headers };
         await this.setAuthorization(options, scopes);
-        var resp = await this.fetch(endpoint, options);
+        let resp = await this.fetch(endpoint, options);
         while (resp.status === 202 && repeatOn202) {
             resp = new Response();
             console.log('retrying...');
