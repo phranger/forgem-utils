@@ -6,12 +6,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const querystring = __importStar(require("querystring"));
-const node_fetch_1 = __importDefault(require("node-fetch"));
+const node_fetch_1 = __importStar(require("node-fetch"));
 const authentication_1 = require("./authentication");
 const RetryDelay = 5000; // Delay (in milliseconds) before retrying after a "202 Accepted" response
 function sleep(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
@@ -136,8 +133,9 @@ class ForgeClient {
     async get(endpoint, headers = {}, scopes, repeatOn202 = false) {
         const options = { method: 'GET', headers };
         await this.setAuthorization(options, scopes);
-        let resp = await this.fetch(endpoint, options);
+        var resp = await this.fetch(endpoint, options);
         while (resp.status === 202 && repeatOn202) {
+            resp = new node_fetch_1.Response();
             sleep(RetryDelay);
             resp = await this.fetch(endpoint, options);
         }
